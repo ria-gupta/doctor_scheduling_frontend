@@ -9,6 +9,8 @@ import { DoctorsListComponent } from './components/doctors/doctors-list/doctors-
 import { FormsModule } from '@angular/forms';
 import { SlotsComponent } from './components/doctors/doctors-list/add-appointment/slots/slots.component';
 import { AddAppointmentComponent } from './components/doctors/doctors-list/add-appointment/add-appointment.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { AvailableSlotsComponent } from './components/doctors/doctors-list/add-appointment/slots/available-slots/available-slots.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AddAppointmentComponent } from './components/doctors/doctors-list/add-a
     AppointmentsListComponent,
     DoctorsListComponent,
     AddAppointmentComponent,
-    SlotsComponent, 
+    SlotsComponent,
+    HomepageComponent,
+    AvailableSlotsComponent, 
   ],
   imports: [
     BrowserModule,

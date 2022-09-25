@@ -20,4 +20,8 @@ export class AppointmentsService {
     addAppointmentRequest.id='00000000-0000-0000-0000-000000000000';
     return this.http.post<Appointments>(this.baseApiUrl + '/api/appointments',addAppointmentRequest);
   }
+
+  deleteAppointment(id:string):Observable<Appointments>{
+     return this.http.delete<Appointments>(this.baseApiUrl+'/api/appointments/' + id);
+  }
 }

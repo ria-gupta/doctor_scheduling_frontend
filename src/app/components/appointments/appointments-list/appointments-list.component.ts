@@ -27,4 +27,15 @@ export class AppointmentsListComponent implements OnInit {
     });
   }
 
+  cancelAppointment(id:string){
+    this.appointmentService.deleteAppointment(id)
+    .subscribe({
+      next: (response) => {
+        alert("Appointment Cancelled Succesfully!!");
+        window.location.reload();
+
+      }
+    })
+  }
+
 }
