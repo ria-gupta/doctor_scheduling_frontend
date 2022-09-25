@@ -1,10 +1,11 @@
 import { Time } from "@angular/common";
 
 export interface Appointments{
-    id : number;
+    id : string;
     patientName : string;
     doctorName : string;
+    doctorId : number;
     appointmentDate : string;
-    slotStartTime : string;
-    slotEndTime : string;
+    slotId : number;
+    slotName : string;
 }

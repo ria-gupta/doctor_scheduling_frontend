@@ -1,0 +1,4 @@
+<select name="availableSlots" id="availableSlots" 
+[(ngModel)]="selectedSlot" (ngModelChange)="onSlotSelection($event)">
+    <option *ngFor="let slot of slots" [ngValue]="slot">{{slot.slotName}}</option>
+</select>

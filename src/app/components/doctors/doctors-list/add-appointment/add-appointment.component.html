@@ -1,0 +1,27 @@
+<div class="container my-5">
+    <h1 class="mb-3">Book an appointment</h1>
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="addAppointment()">
+                <div class="mb-3">
+                    <label for="patientName" class="form-label">Patient's Name</label>
+                    <input type="text" class="form-control" id="patientName" 
+                    name="patientName" [(ngModel)]="addAppointmentRequest.patientName">
+                </div>
+                <div class="mb-3">
+                    <label for="appointmentDate" class="form-label">Select date of appointment</label>
+                    <input type="date" class="form-control" id="appointmentDate" 
+                    name="appointmentDate" [(ngModel)]="addAppointmentRequest.appointmentDate">
+                </div>
+                <div class="mb-3">
+                    <label for="availableSlots" >Select a slot:&nbsp;&nbsp;</label>
+                    <app-slots (saveSlotForAppointment)="onSelectingSlot($event)"></app-slots>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

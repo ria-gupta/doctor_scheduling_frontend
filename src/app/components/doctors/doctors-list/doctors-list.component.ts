@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { Doctors } from 'src/app/models/doctor';
+import { DoctorsService } from 'src/app/services/doctors.service';
 
 @Component({
   selector: 'app-doctors-list',
@@ -8,20 +9,20 @@ import { Doctors } from 'src/app/models/doctor';
   styleUrls: ['./doctors-list.component.css'],
 })
 export class DoctorsListComponent implements OnInit {
-  doctors: Doctors[] = [
-    {
-      doctorId: 210,
-      doctorName: 'Dr. John Doe',
-      status: 'Available',
-    },
-    {
-      doctorId: 222,
-      doctorName: 'Dr. Jane Doe',
-      status: 'Available',
-    },
-  ];
-  constructor() {}
+  doctors: Doctors[] = [];
+  constructor(private doctorsService: DoctorsService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.doctorsService.getAllDoctors()
+    .subscribe({
+      next: (_doctors) => {
+        console.log(_doctors);
+        this.doctors = _doctors;
+      },
+      error: (response) => {
+        console.log(response);
+      }
+    });
+  }
 
 }

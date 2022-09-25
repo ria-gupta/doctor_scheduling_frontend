@@ -1,5 +1,5 @@
 export interface Doctors{
     doctorId : number;
-    doctorName : string;
+    name : string;
     status : string;
 }

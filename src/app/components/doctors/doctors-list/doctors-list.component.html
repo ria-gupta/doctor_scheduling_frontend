@@ -10,9 +10,9 @@
     <tbody>
       <tr *ngFor="let doctor of doctors">
         <td>{{doctor.doctorId}}</td>
-        <td>{{doctor.doctorName}}</td>
+        <td>{{doctor.name}}</td>
         <td>{{doctor.status}}</td>
-        <td><button type="button" class="btn btn-primary">Book Appointment</button></td>
+        <td><a [routerLink]="['/doctor','book_appointment',doctor.doctorId]" [queryParams]="{doctorName:doctor.name}">Book An Appointment</a></td>
       </tr>
     </tbody>
   </table>

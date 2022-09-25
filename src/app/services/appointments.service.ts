@@ -15,4 +15,9 @@ export class AppointmentsService {
   getAllAppointments(): Observable<Appointments[]> {
      return this.http.get<Appointments[]>(this.baseApiUrl + '/api/appointments')
   }
+
+  addAppointment(addAppointmentRequest: Appointments):Observable<Appointments> {
+    addAppointmentRequest.id='00000000-0000-0000-0000-000000000000';
+    return this.http.post<Appointments>(this.baseApiUrl + '/api/appointments',addAppointmentRequest);
+  }
 }
